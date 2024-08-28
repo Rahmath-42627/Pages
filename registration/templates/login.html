@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form | CodingNepal</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form method="post">
+        {% csrf_token %}
+      <h2>Register</h2>
+      {% if messages %}
+      <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+      </div>
+{% endif %}
+      <div class="input-field">
+        <input type="text" name="username" required>
+        <label>username</label>
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label>password</label>
+      </div>
+      <button type="submit">Log In</button>
+      
+    </form>
+  </div>
+</body>
+</html>
